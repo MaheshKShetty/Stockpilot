@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.hilt.android)
 }
 
 android {
@@ -26,9 +28,17 @@ android {
             )
         }
     }
+
+    dataBinding {
+        enable = true
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
+    }
+    hilt {
+        enableAggregatingTask = false
     }
     kotlinOptions {
         jvmTarget = "11"
@@ -45,4 +55,15 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation(libs.androidx.viewmodel.ktx)
+    implementation(libs.lifecycle.livedata)
+    implementation(libs.moshi.kts)
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.moshi)
+    implementation(libs.okhttp)
+    implementation(libs.okhttp.logging)
+    implementation(libs.hilt.android)
+    kapt(libs.moshi.codegen)
+    kapt(libs.hilt.compiler)
 }

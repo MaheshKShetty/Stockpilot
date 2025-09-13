@@ -2,4 +2,17 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    
+    <!-- Holdings List Colors -->
+    <color name="text_primary">#333333</color>
+    <color name="text_secondary">#666666</color>
+    <color name="text_tertiary">#999999</color>
+    
+    <!-- P&L Colors -->
+    <color name="profit_green">#4CAF50</color>
+    <color name="loss_red">#F44336</color>
+    
+    <!-- Background Colors -->
+    <color name="background_light">#F0F0F0</color>
+    <color name="divider_light">#E0E0E0</color>
 </resources>
