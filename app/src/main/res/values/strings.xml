@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">StockPilot</string>
+    
+    <!-- Holdings List Strings -->
+    <string name="net_qty">NET QTY: %1$d</string>
+    <string name="ltp">LTP: ₹ %1$s</string>
+    <string name="pnl">P&amp;L: ₹ %1$s</string>
+    <string name="t1_holding">T1 Holding</string>
+    
+    <!-- Error Messages -->
+    <string name="error_no_internet">No internet connection. Please check your network settings and try again.</string>
+    <string name="error_timeout">Request timed out. Please check your connection and try again.</string>
+    <string name="error_server">Server error. Please try again later.</string>
+    <string name="error_generic">Something went wrong. Please try again.</string>
+    <string name="retry">Retry</string>
 </resources>
