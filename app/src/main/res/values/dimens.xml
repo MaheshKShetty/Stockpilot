@@ -10,6 +10,7 @@
     <dimen name="text_size_regular">14sp</dimen>
     <dimen name="text_size_small">12sp</dimen>
     <dimen name="text_size_tiny">10sp</dimen>
+    <dimen name="text_size_large">16sp</dimen>
     
     <!-- Divider -->
     <dimen name="divider_height">1dp</dimen>
@@ -17,4 +18,8 @@
     <!-- Tag Dimensions -->
     <dimen name="tag_padding_horizontal">8dp</dimen>
     <dimen name="tag_padding_vertical">4dp</dimen>
+    
+    <!-- Portfolio Summary Dimensions -->
+    <dimen name="portfolio_summary_padding">16dp</dimen>
+    <dimen name="summary_item_padding">8dp</dimen>
 </resources>
