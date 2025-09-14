@@ -1,7 +1,6 @@
 package com.mshetty.stockpilot.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
@@ -19,8 +18,6 @@ import com.mshetty.stockpilot.model.PortfolioSummary
 import com.mshetty.stockpilot.utils.UiState
 import com.mshetty.stockpilot.viewModel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
-
-private const val TAG = "MainActivity"
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -63,7 +60,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 is UiState.Error -> {
-                    showErrorState(response.errorType)
+                    showErrorState(response.message)
                 }
 
                 is UiState.Success -> {
@@ -82,13 +79,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun showErrorState(errorType: com.mshetty.stockpilot.utils.ErrorType) {
+    private fun showErrorState(errorMessage: String) {
         binding.apply {
             pbProgress.visibility = View.GONE
             llErrorContainer.visibility = View.VISIBLE
             rvHoldings.visibility = View.GONE
             llPortfolioSummary.visibility = View.GONE
-            tvError.text = getString(errorType.messageResId)
+            tvError.text = errorMessage
             btnRetry.text = getString(R.string.retry)
         }
     }

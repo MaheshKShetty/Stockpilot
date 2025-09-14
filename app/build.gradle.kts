@@ -20,8 +20,15 @@ android {
     }
 
     buildTypes {
-        release {
+        debug {
+            isDebuggable = true
             isMinifyEnabled = false
+            buildConfigField("boolean", "ENABLE_LOGGING", "true")
+        }
+        release {
+            isMinifyEnabled = true
+            isShrinkResources = true
+            buildConfigField("boolean", "ENABLE_LOGGING", "false")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -29,8 +36,9 @@ android {
         }
     }
 
-    dataBinding {
-        enable = true
+    buildFeatures {
+        buildConfig = true
+        dataBinding = true
     }
 
     compileOptions {
