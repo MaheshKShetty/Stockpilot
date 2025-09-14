@@ -13,4 +13,11 @@
     <string name="error_server">Server error. Please try again later.</string>
     <string name="error_generic">Something went wrong. Please try again.</string>
     <string name="retry">Retry</string>
+    
+    <!-- Portfolio Summary Strings -->
+    <string name="portfolio_summary">Portfolio Summary</string>
+    <string name="current_value">Current value*</string>
+    <string name="total_investment">Total investment*</string>
+    <string name="todays_pnl">Today\'s Profit &amp; Loss*</string>
+    <string name="profit_loss">Profit &amp; Loss*</string>
 </resources>
