@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 is UiState.Error -> {
-                    showErrorState(response.errorType)
+                    showErrorState(response.message)
                 }
 
                 is UiState.Success -> {
@@ -82,13 +82,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun showErrorState(errorType: com.mshetty.stockpilot.utils.ErrorType) {
+    private fun showErrorState(errorMessage: String) {
         binding.apply {
             pbProgress.visibility = View.GONE
             llErrorContainer.visibility = View.VISIBLE
             rvHoldings.visibility = View.GONE
             llPortfolioSummary.visibility = View.GONE
-            tvError.text = getString(errorType.messageResId)
+            tvError.text = errorMessage
             btnRetry.text = getString(R.string.retry)
         }
     }
