@@ -1,6 +1,7 @@
 package com.mshetty.stockpilot.di
 
 import android.content.Context
+import com.mshetty.stockpilot.BuildConfig
 import com.mshetty.stockpilot.network.ConnectivityInterceptor
 import com.mshetty.stockpilot.remote.StocksApi
 import com.squareup.moshi.Moshi
@@ -34,7 +35,11 @@ object NetworkModule {
     @Singleton
     fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor {
         return HttpLoggingInterceptor().apply {
-            level = HttpLoggingInterceptor.Level.BODY
+            level = if (BuildConfig.ENABLE_LOGGING) {
+                HttpLoggingInterceptor.Level.BODY
+            } else {
+                HttpLoggingInterceptor.Level.NONE
+            }
         }
     }
 
